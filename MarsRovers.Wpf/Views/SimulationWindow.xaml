@@ -1,0 +1,16 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ThoughtWorks_CodingTests_MarsRovers="clr-namespace:ThoughtWorks.CodingTests.MarsRovers" x:Class="ThoughtWorks.CodingTests.MarsRovers.Views.SimulationWindow"
+        Title="Simulation Window" Height="334" Width="424">
+    <Grid DataContext="{Binding MarsRovers, Mode=OneWay, Source={StaticResource Locator}}">
+        <Button Content="Configure" Height="23" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ConfigureCommand, Mode=OneWay}"  />
+        <Button Content="Start" Height="23" HorizontalAlignment="Left" Margin="87,8,0,0" VerticalAlignment="Top" Width="75" Command="{Binding StartTimerCommand, Mode=OneWay}" />
+        <Button Content="Stop" Height="23" HorizontalAlignment="Left" Margin="166,8,0,0" VerticalAlignment="Top" Width="75" Command="{Binding StopTimerCommand, Mode=OneWay}" />
+        <Border Margin="8,35,8,8" BorderBrush="Black" BorderThickness="0.5" CornerRadius="3" >
+        	<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        		<ThoughtWorks_CodingTests_MarsRovers:SimulationView DataContext="{Binding Mode=OneWay}"/>
+        	</ScrollViewer>
+        </Border>
+    </Grid>
+</Window>
